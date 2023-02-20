@@ -4,8 +4,7 @@ stages:
     params:
       - preprocessing
     outs:
-      - data/processed/iris.pkl:
-          cache: false
+      - data/processed/iris.pkl
 
   train:
     cmd: python -m src.stages.training

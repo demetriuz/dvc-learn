@@ -4,6 +4,8 @@ preprocessing:
 training:
   dataset_path: *dataset
   model_path: &model_path models/lr.pkl
+  model_kw:
+    max_iter: 7
 
 evaluate:
   dataset_path: *dataset
