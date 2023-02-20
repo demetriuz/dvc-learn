@@ -1,0 +1,26 @@
+stages:
+  preprocessing:
+    cmd: python -m src.stages.preprocessing
+    params:
+      - preprocessing
+    outs:
+      - data/processed/iris.pkl:
+          cache: false
+
+  train:
+    cmd: python -m src.stages.training
+    deps:
+      - data/processed/iris.pkl
+    params:
+      - training
+    outs:
+      - models/lr.pkl
+
+  evaluate:
+    cmd: python -m src.stages.evaluate
+    deps:
+      - data/processed/iris.pkl
+      - models/lr.pkl
+    metrics:
+    - reports/metrics.json:
+        cache: false

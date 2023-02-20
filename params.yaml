@@ -1,0 +1,11 @@
+preprocessing:
+  dataset_path: &dataset data/processed/iris.pkl
+
+training:
+  dataset_path: *dataset
+  model_path: &model_path models/lr.pkl
+
+evaluate:
+  dataset_path: *dataset
+  model_path: *model_path
+  metrics_path: reports/metrics.json
