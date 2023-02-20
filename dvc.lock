@@ -22,10 +22,10 @@ stages:
           dataset_path: data/processed/iris.pkl
           model_path: models/lr.pkl
           model_kw:
-            max_iter: 7
+            max_iter: 20
     outs:
     - path: models/lr.pkl
-      md5: c64f2a1c3942313a33f0c893234877c4
+      md5: 4306f0801e9d6e22331fa8b4478ac896
       size: 927
   evaluate:
     cmd: python -m src.stages.evaluate
@@ -34,9 +34,9 @@ stages:
       md5: 354f2f619f8237e08faa5e8bbb448cfd
       size: 8578
     - path: models/lr.pkl
-      md5: c64f2a1c3942313a33f0c893234877c4
+      md5: 4306f0801e9d6e22331fa8b4478ac896
       size: 927
     outs:
     - path: reports/metrics.json
-      md5: d282299f4a8b50cc6e45582c25b6b857
-      size: 32
+      md5: 3329ba1a6b18407f725a1e25a5500560
+      size: 17
